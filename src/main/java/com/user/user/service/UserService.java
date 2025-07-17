@@ -52,15 +52,13 @@ public class UserService {
     }
 
     public String delete(Long id){
-        User user = getOrElseThrow(id) ;
+        User user = this.getOrElseThrow(id);
 
         if(user.isLeaveYn()){
             return "이미 탈퇴된 유저입니다.";
-        }
-        else{
-       user.leave();
-       return "회원 탈퇴가 완료되었습니다.";
-
+        } else {
+            user.leave();
+            return "회원 탈퇴가 완료되었습니다.";
         }
     }
 }

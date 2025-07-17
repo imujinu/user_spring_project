@@ -43,9 +43,9 @@ public class UserController {
     }
 
     //회원 탈퇴
-    @DeleteMapping("/delete/{id}")
+    @PatchMapping("/delete/{id}")
     public ResponseEntity<String> delete(@PathVariable(value = "id")Long id){
-        userService.delete(id);
+
         return new ResponseEntity<>(userService.delete(id), HttpStatus.ACCEPTED);
     }
 
